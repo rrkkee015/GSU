@@ -41,7 +41,13 @@
 - **Final Boss System**: The player's initial state (the strongest self) appears as the final boss
 - **Strategic Choices**: Players must decide which abilities to give up first and how to overcome challenges with what remains
 
-## 5-1. Protagonist's Elemental Abilities
+## 5-1. Protagonist's Basic Movement
+
+The protagonist moves using directional keys by default. Pressing the spacebar allows the protagonist to dash.
+
+- **Dash**: The protagonist quickly moves a short distance in the current movement direction, leaving behind an afterimage effect.
+
+## 5-2. Protagonist's Elemental Abilities
 
 The protagonist can wield various elemental powers, each with unique attack patterns and status effects.
 
