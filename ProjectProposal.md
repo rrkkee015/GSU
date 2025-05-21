@@ -61,7 +61,23 @@ The protagonist can wield various elemental powers, each with unique attack patt
   - _Shock_: Increases damage the enemy takes by 1.5x
 - **Light**: Deals damage in a wide straight line, with damage ranging from very low to very high depending on charge time
 
+**Elemental Ability Leveling System**
+
+- Each elemental ability can be leveled up.
+- However, every time the player levels up an elemental ability, they must lose or weaken another elemental ability.
+- When one elemental ability reaches its maximum level, the protagonist can only use that element and becomes a character who has awakened mastery over that element.
+
 Each elemental ability can be used strategically depending on the situation, and the player will lose these abilities one by one as the stages progress.
+
+## 5-3. Enemy Concepts
+
+1. Enemies continuously pursue the player.
+2. Each time the player levels up, new types of enemies are introduced.
+3. Types of enemies:
+   - **3-1. Minions**: Basic enemies that appear in large numbers.
+   - **3-2. Mid-bosses**: Stronger enemies with unique attack patterns or abilities.
+   - **3-3. Boss (Phase 1)**: A boss character that possesses all the abilities the player had at the start.
+   - **3-4. Boss (Phase 2)**: A boss that has mastered a single random element, representing an awakened character with ultimate proficiency in that element.
 
 ---
 
