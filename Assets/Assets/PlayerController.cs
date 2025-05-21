@@ -19,12 +19,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        movement.x = 0f;
-        movement.y = 0f;
-        if (Input.GetKey(KeyCode.UpArrow)) movement.y = 1f;
-        if (Input.GetKey(KeyCode.DownArrow)) movement.y = -1f;
-        if (Input.GetKey(KeyCode.LeftArrow)) movement.x = -1f;
-        if (Input.GetKey(KeyCode.RightArrow)) movement.x = 1f;
+        // 입력은 Update에서만 처리
+        movement = Vector2.zero;
+        if (Input.GetKey(KeyCode.UpArrow)) movement.y += 1f;
+        if (Input.GetKey(KeyCode.DownArrow)) movement.y -= 1f;
+        if (Input.GetKey(KeyCode.LeftArrow)) movement.x -= 1f;
+        if (Input.GetKey(KeyCode.RightArrow)) movement.x += 1f;
         movement = movement.normalized;
 
         // 대시 입력
@@ -36,11 +36,14 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        // FixedUpdate에서만 velocity를 제어
         if (dashController != null && dashController.IsDashing)
         {
             dashController.DashMove(movement);
-            return;
         }
-        rb.linearVelocity = movement * moveSpeed;
+        else
+        {
+            rb.linearVelocity = movement * moveSpeed;
+        }
     }
 }

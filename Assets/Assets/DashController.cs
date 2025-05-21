@@ -20,7 +20,7 @@ public class DashController : MonoBehaviour
     public bool IsDashing => isDashing;
     public bool CanDash => !isDashing && Time.time >= lastDashTime + dashCooldown;
 
-    void Awake()
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
@@ -55,6 +55,7 @@ public class DashController : MonoBehaviour
             if (dashTime >= dashDuration)
             {
                 isDashing = false;
+                rb.linearVelocity = Vector2.zero;
             }
         }
     }
