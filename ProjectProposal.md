@@ -67,6 +67,11 @@ The protagonist can wield various elemental powers, each with unique attack patt
 - However, every time the player levels up an elemental ability, they must lose or weaken another elemental ability.
 - When one elemental ability reaches its maximum level, the protagonist can only use that element and becomes a character who has awakened mastery over that element.
 
+**Aging & Ability Loss System**
+
+- As the player repels enemies, their age gradually increases.
+- At certain age milestones, the player loses a random ability.
+
 Each elemental ability can be used strategically depending on the situation, and the player will lose these abilities one by one as the stages progress.
 
 ## 5-3. Enemy Concepts
@@ -75,9 +80,17 @@ Each elemental ability can be used strategically depending on the situation, and
 2. Each time the player levels up, new types of enemies are introduced.
 3. Types of enemies:
    - **3-1. Minions**: Basic enemies that appear in large numbers.
-   - **3-2. Mid-bosses**: Stronger enemies with unique attack patterns or abilities.
-   - **3-3. Boss (Phase 1)**: A boss character that possesses all the abilities the player had at the start.
-   - **3-4. Boss (Phase 2)**: A boss that has mastered a single random element, representing an awakened character with ultimate proficiency in that element.
+   - **3-2. Molotov Thrower**: Throws firebombs at the player from a distance.
+   - **3-3. Fast Chaser**: Approaches the player much faster than other enemies.
+   - **3-4. Mine Layer**: Lays mines on the field that explode when the player gets close.
+   - **3-5. Splitter**: When killed, splits into two enemies, up to three times (max 8 total from one).
+   - **3-6. Mid-bosses**: Stronger enemies with unique attack patterns or abilities.
+   - **3-7. Boss (Phase 1)**: A boss character that possesses all the abilities the player had at the start. When its HP drops to 1%, it fully restores HP and enters phase 2.
+   - **3-8. Boss (Phase 2)**: The boss has mastered a single random element, representing an awakened character with ultimate proficiency in that element. The game screen dramatically shifts to black and white during this phase.
+
+## 5-4. Map Design
+
+- The map is an infinitely large open field, allowing for free movement and large-scale enemy encounters.
 
 ---
 
