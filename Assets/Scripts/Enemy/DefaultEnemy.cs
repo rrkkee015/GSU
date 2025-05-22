@@ -16,6 +16,44 @@ public class DefaultEnemy : MonoBehaviour, IEnemy
         // 스폰 시 추가 동작 필요시 구현
     }
 
+    void Awake()
+    {
+        // Ensure this enemy has a Collider2D for collision detection
+        if (GetComponent<Collider2D>() == null)
+        {
+            CircleCollider2D collider = gameObject.AddComponent<CircleCollider2D>();
+            collider.radius = 0.5f;
+            collider.isTrigger = true;
+        }
+        // Ensure this enemy has an EnemyHealth component
+        if (GetComponent<EnemyHealth>() == null)
+        {
+            gameObject.AddComponent<EnemyHealth>();
+        }
+        // Ensure this enemy has a DamageDealer component
+        if (GetComponent<DamageDealer>() == null)
+        {
+            DamageDealer dealer = gameObject.AddComponent<DamageDealer>();
+            dealer.damageAmount = 1;
+            dealer.isProjectile = false;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // 플레이어와 충돌 시 데미지 처리
+        PlayerHealth playerHealth = other.GetComponentInParent<PlayerHealth>();
+        DamageDealer dealer = GetComponent<DamageDealer>();
+        if (playerHealth != null && dealer != null)
+        {
+            playerHealth.TakeDamage(dealer.damageAmount);
+            // 적도 사라지게
+            EnemyHealth enemyHealth = GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
+                enemyHealth.TakeDamage(enemyHealth.currentHP); // 즉시 사망
+        }
+    }
+
     void Update()
     {
         if (target == null) return;
