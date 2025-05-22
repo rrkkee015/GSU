@@ -703,6 +703,9 @@ MonoBehaviour:
   spawnInterval: 3
   enemiesPerSpawn: 5
   spawnDistanceFromCamera: 2
+  enemyIncreaseInterval: 10
+  enemyIncreaseAmount: 10
+  maxEnemiesPerSpawn: 30
 --- !u!4 &784710098
 Transform:
   m_ObjectHideFlags: 0

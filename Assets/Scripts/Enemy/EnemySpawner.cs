@@ -11,9 +11,37 @@ public class EnemySpawner : MonoBehaviour
     public int enemiesPerSpawn = 1;
     public float spawnDistanceFromCamera = 2f;
 
+    [Header("Enemy Count Increment Settings")]
+    [Tooltip("How often the number of enemies will increase")]
+    public float enemyIncreaseInterval = 30f;
+    [Tooltip("How many additional enemies to spawn each increment")]
+    public int enemyIncreaseAmount = 1;
+    [Tooltip("Maximum number of enemies that can spawn at once")]
+    public int maxEnemiesPerSpawn = 10;
+
+    private float timeSinceLastIncrease = 0f;
+    private int currentEnemiesPerSpawn;
+
     private void Start()
     {
+        currentEnemiesPerSpawn = enemiesPerSpawn;
         StartCoroutine(SpawnRoutine());
+    }
+
+    private void Update()
+    {
+        timeSinceLastIncrease += Time.deltaTime;
+        
+        if (timeSinceLastIncrease >= enemyIncreaseInterval)
+        {
+            timeSinceLastIncrease = 0f;
+            IncreaseEnemyCount();
+        }
+    }
+
+    void IncreaseEnemyCount()
+    {
+        currentEnemiesPerSpawn = Mathf.Min(currentEnemiesPerSpawn + enemyIncreaseAmount, maxEnemiesPerSpawn);
     }
 
     IEnumerator SpawnRoutine()
@@ -27,7 +55,7 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemies()
     {
-        for (int i = 0; i < enemiesPerSpawn; i++)
+        for (int i = 0; i < currentEnemiesPerSpawn; i++)
         {
             Vector3 spawnPos = GetRandomPositionOutsideCamera();
             GameObject enemyObj = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
