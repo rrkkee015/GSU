@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 426197911}
   - component: {fileID: 426197912}
   - component: {fileID: 426197913}
+  - component: {fileID: 426197914}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -428,6 +429,26 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &426197914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426197906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8076c6e1ea4242deb1991b4b7402e4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1
+  damage: 9999
+  attackInterval: 2
+  effectPrefab: {fileID: 5270450943266655981, guid: af95c81bc0dd045228fb84805b007185, type: 3}
+  effectDuration: 0.5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
